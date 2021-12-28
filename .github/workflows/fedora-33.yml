@@ -54,4 +54,4 @@ jobs:
           file: fedora33/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ github.repository }}:fedora:33
+          tags: ${{ github.repository }}:33
