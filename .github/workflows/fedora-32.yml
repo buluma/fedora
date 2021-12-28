@@ -1,5 +1,5 @@
 ---
-name: Build fedora-33
+name: Build fedora-32
 
 on:
   pull_request:
