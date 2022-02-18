@@ -8,7 +8,7 @@ on:
       - 'fedora36/**'
       - '.github/workflows/fedora-36.yml'
   schedule:
-    - cron: '4 6 * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
