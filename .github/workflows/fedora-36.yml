@@ -8,7 +8,7 @@ on:
       - 'fedora36/**'
       - '.github/workflows/fedora-36.yml'
   schedule:
-    - cron: '40 *,* * * *'
+    - cron: '4 6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -52,6 +52,6 @@ jobs:
         with:
           context: fedora36/
           file: fedora36/Dockerfile
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ github.repository }}:36, ${{ github.repository }}:rawhide
