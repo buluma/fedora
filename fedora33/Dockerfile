@@ -1,6 +1,6 @@
 FROM fedora:33
 LABEL maintainer="Michael Buluma"
-LABEL build_date="2022-02-18"
+LABEL build_date="2022-03-03"
 ENV container=docker
 
 ENV pip_packages "ansible"
