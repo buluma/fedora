@@ -8,7 +8,7 @@ on:
       - 'fedora32/**'
       - '.github/workflows/fedora-32.yml'
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 6 * * 2'
   workflow_dispatch:
     inputs:
       debug:

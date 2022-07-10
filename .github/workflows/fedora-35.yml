@@ -8,7 +8,7 @@ on:
       - 'fedora35/**'
       - '.github/workflows/fedora-35.yml'
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 10 * * 5'
   workflow_dispatch:
     inputs:
       debug:
