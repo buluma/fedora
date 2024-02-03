@@ -1,5 +1,5 @@
 ---
-name: Build fedora-39
+name: Build fedora-latest
 
 on:
   pull_request:
@@ -47,14 +47,40 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          # list of Docker images to use as base name for tags
+          images: |
+            name/app
+            ghcr.io/username/app
+          # generate Docker tags based on the following events/attributes
+          tags: |
+            type=schedule
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=sha
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
 
       - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Login to GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push image.
         uses: docker/build-push-action@v5
@@ -64,5 +90,24 @@ jobs:
           provenance: mode=min
           file: fedora39/Dockerfile
           platforms: linux/amd64,linux/arm64
-          push: true
-          tags: ${{ github.repository }}:39, ${{ github.repository }}:latest
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ${{ github.repository }}:39
+            ${{ github.repository }}:latest
+            ghcr.io/buluma/fedora:39
+            ghcr.io/buluma/fedora:latest
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Inspect
+        run: |
+          docker image inspect buluma/fedora:latest
+
+      - name: Docker Scout
+        id: docker-scout
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: docker/scout-action@dd36f5b0295baffa006aa6623371f226cc03e506
+        with:
+          command: cves
+          image: ${{ steps.meta.outputs.tags }}
+          only-severities: critical,high
+          exit-code: true

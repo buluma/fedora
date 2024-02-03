@@ -102,13 +102,6 @@ jobs:
         run: |
           docker image inspect buluma/fedora:rawhide
 
-      - name: Update repo description
-        uses: peter-evans/dockerhub-description@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: buluma/fedora
-
       - name: Docker Scout
         id: docker-scout
         if: ${{ github.event_name == 'pull_request' }}
