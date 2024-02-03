@@ -98,10 +98,6 @@ jobs:
             ghcr.io/buluma/fedora:rawhide
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Inspect
-        run: |
-          docker image inspect docker-fedora40
-
       - name: Docker Scout
         id: docker-scout
         if: ${{ github.event_name == 'pull_request' }}
