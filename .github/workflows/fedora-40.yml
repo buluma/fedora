@@ -1,12 +1,12 @@
 ---
-name: Build fedora-39
+name: Build fedora-rawhide
 
 on:
   pull_request:
   push:
     paths:
-      - 'fedora39/**'
-      - '.github/workflows/fedora-39.yml'
+      - 'fedora40/**'
+      - '.github/workflows/fedora-40.yml'
   schedule:
     - cron: '5 12/9 * * 4'
   workflow_dispatch:
@@ -30,10 +30,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Test building image.
-        run: cd fedora39 && docker build -t docker-fedora39 .
+        run: cd fedora40 && docker build -t docker-fedora40 .
 
       - name: Run the built image.
-        run: docker run --name test-fedora39 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-fedora39
+        run: docker run --name test-fedora40 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-fedora40
 
       # - name: Verify Ansible is accessible in the built image.
         # run: docker exec --tty test-centos7 env TERM=xterm ansible --version
@@ -46,23 +46,24 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-qemu-action@v3
-      - uses: docker/setup-buildx-action@v3
+      - uses: actions/checkout@v3
+      - uses: docker/setup-qemu-action@v1
+      - uses: docker/setup-buildx-action@v1
 
       - name: Login to DockerHub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push image.
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v2
         with:
-          context: fedora39/
+          context: fedora40/
+          attests: type=sbom,generator=image
+          provenance: mode=max
           sbom: true
-          provenance: mode=min
-          file: fedora39/Dockerfile
+          file: fedora40/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ github.repository }}:39, ${{ github.repository }}:latest
+          tags: ${{ github.repository }}:40, ${{ github.repository }}:rawhide
