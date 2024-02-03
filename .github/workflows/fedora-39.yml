@@ -62,7 +62,6 @@ jobs:
           context: fedora39/
           attests: type=sbom,generator=image
           provenance: mode=max
-          sbom: true
           file: fedora39/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
