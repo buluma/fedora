@@ -1,23 +1,7 @@
 FROM fedora:36
 LABEL maintainer="Michael Buluma"
-LABEL build_date="2024-02-02"
-
+LABEL build_date="2022-03-03"
 ENV container=docker
-
-# Create a system group named "user" with the -r flag
-RUN groupadd -r user
-
-# Create a system user named "user" and add it to the "user" group with the -r and -g flags
-RUN useradd -r -g user user
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Change the ownership of the working directory to the non-root user "user"
-RUN chown -R user:user /app
-
-# Switch to the non-root user "user"
-USER user
 
 ENV pip_packages "ansible"
 

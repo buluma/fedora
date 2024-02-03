@@ -66,4 +66,4 @@ jobs:
           file: fedora36/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ github.repository }}:36
+          tags: ${{ github.repository }}:36, ${{ github.repository }}:latest
