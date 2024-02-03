@@ -14,23 +14,7 @@ RUN dnf -y install systemd && dnf clean all && \
   rm -f /lib/systemd/system/sockets.target.wants/*udev* ; \
   rm -f /lib/systemd/system/sockets.target.wants/*initctl* ; \
   rm -f /lib/systemd/system/basic.target.wants/* ;\
-  rm -f /lib/systemd/system/anaconda.target.wants/*
-
-
-# Create a system group named "user" with the -r flag
-RUN groupadd -r user
-
-# Create a system user named "user" and add it to the "user" group with the -r and -g flags
-RUN useradd -r -g user user
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Change the ownership of the working directory to the non-root user "user"
-RUN chown -R user:user /app
-
-# Switch to the non-root user "user"
-USER user
+  rm -f /lib/systemd/system/anaconda.target.wants/*s
 
 VOLUME ["/sys/fs/cgroup"]
 CMD ["/sbin/init"]
