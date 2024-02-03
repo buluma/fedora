@@ -86,10 +86,26 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: fedora40/
+          load: true
           sbom: true
           provenance: mode=min
           file: fedora40/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ github.repository }}:40
+          tags: |
+            ${{ github.repository }}:40
+            ${{ github.repository }}:rawhide
+            ghcr.io/buluma/fedora:40
+            ghcr.io/buluma/fedora:rawhide
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Inspect
+        run: |
+          docker image inspect buluma/fedora:rawhide
+
+      - name: Update repo description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: buluma/fedora
