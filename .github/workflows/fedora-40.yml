@@ -86,7 +86,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: fedora40/
-          load: true
           sbom: true
           provenance: mode=min
           file: fedora40/Dockerfile
