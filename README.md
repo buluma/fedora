@@ -1,6 +1,6 @@
 # Fedora Base Docker Images
 
-[![Build fedora-30](https://github.com/buluma/fedora/actions/workflows/fedora-30.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-30.yml) [![Build fedora-31](https://github.com/buluma/fedora/actions/workflows/fedora-31.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-31.yml) [![Build fedora-32](https://github.com/buluma/fedora/actions/workflows/fedora-32.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-32.yml) [![Build fedora-33](https://github.com/buluma/fedora/actions/workflows/fedora-33.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-33.yml) [![Build fedora-34](https://github.com/buluma/fedora/actions/workflows/fedora-34.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-34.yml) [![Build fedora-35](https://github.com/buluma/fedora/actions/workflows/fedora-35.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-35.yml) [![Build fedora-36](https://github.com/buluma/fedora/actions/workflows/fedora-36.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-36.yml)
+[![Build fedora-35](https://github.com/buluma/fedora/actions/workflows/fedora-35.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-35.yml) [![Build fedora-36](https://github.com/buluma/fedora/actions/workflows/fedora-36.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-36.yml) [![Build fedora-37](https://github.com/buluma/fedora/actions/workflows/fedora-37.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-37.yml) [![Build fedora-38](https://github.com/buluma/fedora/actions/workflows/fedora-38.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-38.yml) [![Build fedora-39](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml) [![Build fedora-40](https://github.com/buluma/fedora/actions/workflows/fedora-40.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-40.yml)
 
 
 ## Quick reference
@@ -10,14 +10,12 @@
     Where to get help: the Docker Community Forums, the Docker Community Slack, or Stack Overflow
 
 ## Supported tags and respective Dockerfile links
-
-    30
-    31
-    32
-    33
-    34
-    35, latest
-    rawhide, 36
+    35
+    36
+    37
+    38
+    39, latest
+    rawhide, 40
 
 ## Quick reference (cont.)
 
@@ -40,4 +38,4 @@ The fedora:latest tag will always point to the latest stable release.
 
 This image is a relatively small footprint in comparison to a standard Fedora installation. This image is generated in the Fedora Build System and is built from this kickstart file.
 
-Fedora Rawhide is available via fedora:rawhide and any specific version of Fedora as fedora:$version (example: fedora:23).
+Fedora Rawhide is available via fedora:rawhide and any specific version of Fedora as fedora:$version (example: fedora:39).
