@@ -100,7 +100,7 @@ jobs:
 
       - name: Inspect
         run: |
-          docker image inspect buluma/fedora:rawhide
+          docker image inspect docker-fedora40
 
       - name: Docker Scout
         id: docker-scout
