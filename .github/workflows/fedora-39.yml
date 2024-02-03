@@ -98,10 +98,6 @@ jobs:
             ghcr.io/buluma/fedora:latest
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Inspect
-        run: |
-          docker image inspect buluma/fedora:latest
-
       - name: Docker Scout
         id: docker-scout
         if: ${{ github.event_name == 'pull_request' }}
