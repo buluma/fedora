@@ -30,10 +30,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Test building image.
-        run: cd fedora38 && docker build -t docker-fedora38 .
+        run: cd fedora39 && docker build -t docker-fedora39 .
 
       - name: Run the built image.
-        run: docker run --name test-fedora38 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-fedora38
+        run: docker run --name test-fedora39 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-fedora39
 
       # - name: Verify Ansible is accessible in the built image.
         # run: docker exec --tty test-centos7 env TERM=xterm ansible --version
@@ -63,7 +63,7 @@ jobs:
           attests: type=sbom,generator=image
           provenance: mode=max
           sbom: true
-          file: fedora38/Dockerfile
+          file: fedora39/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ github.repository }}:38
+          tags: ${{ github.repository }}:39
