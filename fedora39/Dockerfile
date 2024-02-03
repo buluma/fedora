@@ -1,9 +1,8 @@
 FROM fedora:39
 
 LABEL maintainer="Michael Buluma"
-LABEL build_date="2024-20-01"
+LABEL build_date="2024-02-02"
 
-ARG BUILDKIT_SBOM_SCAN_STAGE=true
 ENV container=docker
 
 # Enable systemd.
@@ -17,6 +16,5 @@ RUN dnf -y install systemd && dnf clean all && \
   rm -f /lib/systemd/system/basic.target.wants/* ;\
   rm -f /lib/systemd/system/anaconda.target.wants/*
 
-ARG BUILDKIT_SBOM_SCAN_CONTEXT=true
 VOLUME ["/sys/fs/cgroup"]
 CMD ["/sbin/init"]
