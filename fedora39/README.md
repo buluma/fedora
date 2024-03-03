@@ -1,0 +1,35 @@
+Docker Fedora 39 (Latest)
+=====================
+
+This Dockerfile can build containers capable to use systemd.
+
+[![Build and Push](https://github.com/buluma/docker-fedora/actions/workflows/fedora-39.yml/badge.svg)](https://github.com/buluma/docker-fedora/actions/workflows/fedora-39.yml)
+![GitHub top language](https://img.shields.io/github/languages/top/buluma/docker-fedora)
+
+![Docker Pulls](https://img.shields.io/docker/pulls/buluma/fedora?label=pulls&logo=docker&logoColor=white)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora/latest?logo=docker&logoColor=white&label=latest)
+
+Branches
+--------
+
+This repository has multiple branches that relate to Fedora versions.
+
+|Branch |Fedora Version|Docker image tag|
+|-------|--------------|----------------|
+|master |latest (39)   |latest          |
+
+Pull strategy
+-------------
+
+The different branches are **not** merged, they live as individual branches.
+
+Manually starting
+-----------------
+
+```
+docker run \
+  --tty \
+  --privileged \
+  --volume /sys/fs/cgroup:/sys/fs/cgroup:rw \
+  buluma/fedora
+```
