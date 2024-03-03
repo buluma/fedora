@@ -4,7 +4,7 @@ Docker Fedora 39 (Latest)
 This Dockerfile can build containers capable to use systemd.
 
 [![Build fedora-latest](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml/badge.svg?branch=main)](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml)
-![GitHub top language](https://img.shields.io/github/languages/top/buluma/docker-fedora)
+![GitHub top language](https://img.shields.io/github/languages/top/buluma/fedora)
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/buluma/fedora?label=pulls&logo=docker&logoColor=white)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora/latest?logo=docker&logoColor=white&label=latest)
