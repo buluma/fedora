@@ -93,7 +93,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ${{ github.repository }}:39
-            ${{ github.repository }}:anemoi‎
             ${{ github.repository }}:latest
             ghcr.io/buluma/fedora:39
             ghcr.io/buluma/fedora:latest
