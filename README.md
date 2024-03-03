@@ -3,39 +3,48 @@
 [![Build fedora-35](https://github.com/buluma/fedora/actions/workflows/fedora-35.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-35.yml) [![Build fedora-36](https://github.com/buluma/fedora/actions/workflows/fedora-36.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-36.yml) [![Build fedora-37](https://github.com/buluma/fedora/actions/workflows/fedora-37.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-37.yml) [![Build fedora-38](https://github.com/buluma/fedora/actions/workflows/fedora-38.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-38.yml) [![Build fedora-39](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml) [![Build fedora-40](https://github.com/buluma/fedora/actions/workflows/fedora-40.yml/badge.svg)](https://github.com/buluma/fedora/actions/workflows/fedora-40.yml)
 
 
-## Quick reference
+Docker Fedora Systemd
+=====================
 
-    Maintained by: Michael Buluma
+This Dockerfile can build containers capable to use systemd.
 
-    Where to get help: the Docker Community Forums, the Docker Community Slack, or Stack Overflow
+[![Build and Push](https://github.com/buluma/docker-fedora-systemd/actions/workflows/build-push-action.yml/badge.svg)](https://github.com/buluma/docker-fedora-systemd/actions/workflows/build-push-action.yml)
+![GitHub top language](https://img.shields.io/github/languages/top/buluma/docker-fedora-systemd)
 
-## Supported tags and respective Dockerfile links
-    35
-    36
-    37
-    38
-    39, latest
-    rawhide, 40
+![Docker Pulls](https://img.shields.io/docker/pulls/buluma/fedora-systemd?label=pulls&logo=docker&logoColor=white)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/latest?logo=docker&logoColor=white&label=latest)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/rawhide?logo=docker&logoColor=white&label=rawhide)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/32?logo=docker&logoColor=white&label=32)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/33?logo=docker&logoColor=white&label=33)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/34?logo=docker&logoColor=white&label=34)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/35?logo=docker&logoColor=white&label=35)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/36?logo=docker&logoColor=white&label=36)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/38?logo=docker&logoColor=white&label=38)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/testing?logo=docker&logoColor=white&label=testing)
 
-## Quick reference (cont.)
+Branches
+--------
 
-    Where to file issues: Fedora's bugzilla page or GitHub
+This repository has multiple branches that relate to Fedora versions.
 
-    Supported architectures: (more info) amd64, arm32v7, arm64v8, ppc64le, s390x
+|Branch |Fedora Version|Docker image tag|
+|-------|--------------|----------------|
+|38     |38            |38              |
+|master |latest (39)   |latest          |
+|rawhide|rawhide (40)  |rawhide         |
 
-    Published image artifact details: repo-info repo's repos/fedora/ directory (history) (image metadata, transfer size, etc)
+Pull strategy
+-------------
 
-    Image updates: official-images repo's library/fedora label
-    official-images repo's library/fedora file (history)
+The different branches are **not** merged, they live as individual branches.
 
-    Source of this description: docs repo's fedora/ directory (history)
+Manually starting
+-----------------
 
-# Fedora
-
-This image serves as the official Fedora image for the Fedora Distribution.
-
-The fedora:latest tag will always point to the latest stable release.
-
-This image is a relatively small footprint in comparison to a standard Fedora installation. This image is generated in the Fedora Build System and is built from this kickstart file.
-
-Fedora Rawhide is available via fedora:rawhide and any specific version of Fedora as fedora:$version (example: fedora:39).
+```
+docker run \
+  --tty \
+  --privileged \
+  --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
+  buluma/fedora-systemd
+```
