@@ -87,7 +87,7 @@ jobs:
         with:
           context: fedora40/
           sbom: true
-          provenance: mode=min
+          provenance: mode=max
           file: fedora40/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
