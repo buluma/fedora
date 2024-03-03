@@ -1,5 +1,4 @@
 # Docker Fedora Systemd
-=====================
 
 This Dockerfile can build containers capable to use systemd.
 
