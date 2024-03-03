@@ -26,8 +26,8 @@ This repository has multiple branches that relate to Fedora versions.
 |Branch |Fedora Version|Docker image tag|Docker image size|
 |-------|--------------|----------------|-----------------|
 |38     |38            |38              |![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/testing?logo=docker&logoColor=white&label=testing)|
-|master |latest (39)   |latest          |-----------------|
-|rawhide|rawhide (40)  |rawhide         |-----------------|
+|master |latest (39)   |latest          |![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/latest?logo=docker&logoColor=white&label=latest)|
+|rawhide|rawhide (40)  |rawhide         |![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/rawhide?logo=docker&logoColor=white&label=rawhide)|
 
 Pull strategy
 -------------
