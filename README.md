@@ -39,6 +39,6 @@ Manually starting
 docker run \
   --tty \
   --privileged \
-  --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  buluma/fedora-systemd
+  --volume /sys/fs/cgroup:/sys/fs/cgroup:rw \
+  buluma/fedora
 ```
