@@ -97,7 +97,6 @@ jobs:
             ${{ github.repository }}:latest
             ghcr.io/buluma/fedora:39
             ghcr.io/buluma/fedora:latest
-            ghcr.io/buluma/fedora:anemoi‎
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Docker Scout
