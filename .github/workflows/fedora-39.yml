@@ -1,5 +1,5 @@
 ---
-name: Build fedora-latest
+name: Build fedora-39
 
 on:
   pull_request:
