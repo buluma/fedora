@@ -1,5 +1,5 @@
 ---
-name: Build fedora-43
+name: Build fedora-rawhide
 
 on:
   pull_request:
