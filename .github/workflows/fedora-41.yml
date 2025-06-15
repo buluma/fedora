@@ -1,12 +1,12 @@
 ---
-name: Build fedora-rawhide
+name: Build fedora-41
 
 on:
   pull_request:
   push:
     paths:
       - 'fedora41/**'
-      - '.github/workflows/fedora-40.yml'
+      - '.github/workflows/fedora-41.yml'
   schedule:
     - cron: '5 12/9 * * 4'
   workflow_dispatch:
@@ -92,10 +92,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ github.repository }}:40
-            ${{ github.repository }}:rawhide
-            ghcr.io/buluma/fedora:40
-            ghcr.io/buluma/fedora:rawhide
+            ${{ github.repository }}:41
+            ghcr.io/buluma/fedora:41
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Docker Scout
