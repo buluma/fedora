@@ -1,5 +1,5 @@
 ---
-name: Build fedora-latest
+name: Build fedora-42
 
 on:
   pull_request:
@@ -93,9 +93,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ${{ github.repository }}:42
-            ${{ github.repository }}:latest
             ghcr.io/buluma/fedora:42
-            ghcr.io/buluma/fedora:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Docker Scout
