@@ -1,7 +1,7 @@
 FROM fedora:rawhide
 
 LABEL maintainer="Michael Buluma"
-LABEL build_date="2025-12-09"
+LABEL build_date="2026-01-09"
 
 LABEL org.opencontainers.image.source=https://github.com/buluma/fedora
 LABEL org.opencontainers.image.description="Ansible Fedora Rawhide image"
