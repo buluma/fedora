@@ -9,19 +9,10 @@ This Dockerfile can build containers capable to use systemd.
 ![Docker Pulls](https://img.shields.io/docker/pulls/buluma/fedora?label=pulls&logo=docker&logoColor=white)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora/rawhide?logo=docker&logoColor=white&label=rawhide)
 
-Branches
---------
+Repository Structure
+--------------------
 
-This repository has multiple branches that relate to Fedora versions.
-
-|Branch |Fedora Version|Docker image tag|
-|-------|--------------|----------------|
-|rawhide |rawhide (44)   |rawhide         |
-
-Pull strategy
--------------
-
-The different branches are **not** merged, they live as individual branches.
+This repository uses separate directories (folders) rather than git branches to maintain different Fedora versions. Each version has its own directory with its own Dockerfile and configuration.
 
 Manually starting
 -----------------

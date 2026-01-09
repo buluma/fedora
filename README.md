@@ -26,10 +26,10 @@ This repository has multiple branches that relate to Fedora versions.
 |rawhide|rawhide (44)  |Supported|rawhide         |![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/rawhide?logo=docker&logoColor=white&label=rawhide)|
 |testing|testing (44)  |Supported|testing         |![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora-systemd/testing?logo=docker&logoColor=white&label=testing)|
 
-Pull strategy
--------------
+Repository Structure
+--------------------
 
-The different branches are **not** merged, they live as individual branches.
+This repository uses separate directories (folders) rather than git branches to maintain different Fedora versions. Each version has its own directory (e.g., `fedora41/`, `fedora42/`, etc.) with its own Dockerfile and configuration.
 
 Support Policy
 --------------

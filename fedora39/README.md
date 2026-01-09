@@ -1,27 +1,18 @@
-Docker Fedora 39 (Latest)
+Docker Fedora 39
 =====================
 
 This Dockerfile can build containers capable to use systemd.
 
-[![Build fedora-latest](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml/badge.svg?branch=main)](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml)
+[![Build fedora-39](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml/badge.svg?branch=main)](https://github.com/buluma/fedora/actions/workflows/fedora-39.yml)
 ![GitHub top language](https://img.shields.io/github/languages/top/buluma/fedora)
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/buluma/fedora?label=pulls&logo=docker&logoColor=white)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora/latest?logo=docker&logoColor=white&label=latest)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buluma/fedora/39?logo=docker&logoColor=white&label=39)
 
-Branches
---------
+Repository Structure
+--------------------
 
-This repository has multiple branches that relate to Fedora versions.
-
-|Branch |Fedora Version|Docker image tag|
-|-------|--------------|----------------|
-|master |latest (39)   |latest          |
-
-Pull strategy
--------------
-
-The different branches are **not** merged, they live as individual branches.
+This repository uses separate directories (folders) rather than git branches to maintain different Fedora versions. Each version has its own directory with its own Dockerfile and configuration.
 
 Manually starting
 -----------------
@@ -31,5 +22,5 @@ docker run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:rw \
-  buluma/fedora
+  buluma/fedora:39
 ```
