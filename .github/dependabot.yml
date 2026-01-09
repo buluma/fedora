@@ -10,9 +10,21 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    # Enable automerging for Dependabot PRs that pass all checks
+    automerge:
+      # Specify which review approval state is required
+      # Can be one of: "APPROVE", "REQUEST_CHANGES", or "COMMENT"
+      # Leave blank to not require review approval
+      required_approvals: 0
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    # Enable automerging for Dependabot PRs that pass all checks
+    automerge:
+      # Specify which review approval state is required
+      # Can be one of: "APPROVE", "REQUEST_CHANGES", or "COMMENT"
+      # Leave blank to not require review approval
+      required_approvals: 0
