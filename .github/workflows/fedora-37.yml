@@ -57,7 +57,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push image.
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v6
         with:
           context: fedora37/
           attests: type=sbom,generator=image
