@@ -37,7 +37,7 @@ jobs:
           driver: cloud
           endpoint: "buluma/docker"
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: fedora40/
           tags: ${{ github.repository }}:40
